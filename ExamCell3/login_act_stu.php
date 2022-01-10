@@ -18,12 +18,12 @@ if(isset($_POST['Submit']))
 			$Auth['auth'] = 'true';
 			session_start();
 			$_SESSION['auth'] = $Auth;
-			header('Location: index.php');
+			header('Location: index_student.php');
 		}
 	}
 	else
 	{
-		header('Location: login.php?error=invalid');
+		header('Location: login_student.php?error=invalid');
 	}
 }
 ?>

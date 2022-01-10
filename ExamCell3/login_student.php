@@ -3,7 +3,7 @@
  if(isset($_SESSION['auth']))
  	$UserAuth = $_SESSION['auth'];
  if(isset($UserAuth))
-  header('Location: index.php');
+  header('Location: index_student.php');
  else
   session_destroy();
 ?>
@@ -11,7 +11,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<title>Student Login</title>
+<title>Exam Cell Automation</title>
 <link rel="stylesheet" href="css/bootstrap.min.css">
 <link rel="stylesheet" href="css/bootstrap-theme.min.css">
 <link href="css/style.css" rel="stylesheet" type="text/css" />
@@ -63,4 +63,4 @@
       </div>
     </div>
   </div>
-<?php include_once('footer.php');?>
+<?php include_once('footer_student.php');?>

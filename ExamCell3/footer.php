@@ -10,7 +10,7 @@
           <li><a href="add_user.php">Add New Admin</a></li>
         </ul>
       </div>
-      <div class="col-md-6 text-right copyright"> Developed by <a href="#">Department of CSE, CEC</a> </div>
+      <div class="col-md-6 text-right copyright"> Developed by <a href="#">Group 15,ASE-CBE</a> </div>
     </div>
   </div>
 </footer>
