@@ -49,14 +49,14 @@
     error_reporting(E_ERROR | E_PARSE);
 		$Counter++;
 		$data = fgetcsv($file);
-		$yoa = trim($data[0]);
-		$sem = trim($data[1]);
-		$batch = trim($data[2]);
-		$admn = trim($data[3]);
-		$roll = trim($data[4]);
-		$uid = trim($data[5]);
-		$name = trim($data[6]);
-		$sex = trim($data[7]);
+		$yoa = mysqli_real_escape_string($conn, $data[0]);
+		$sem = mysqli_real_escape_string($conn, $data[1]);
+		$batch = mysqli_real_escape_string($conn, $data[2]);
+		$admn = mysqli_real_escape_string($conn, $data[3]);
+		$roll = mysqli_real_escape_string($conn, $data[4]);
+		$uid = mysqli_real_escape_string($conn, $data[5]);
+		$name = mysqli_real_escape_string($conn, $data[6]);
+		$sex = mysqli_real_escape_string($conn, $data[7]);
 		$dept = substr($uid,0,2);
 		$SQL = mysqli_query($conn,"INSERT into student_data (yoa,sem,department,batch,admn,roll,uid,name,sex) values ('$yoa','$sem','$dept','$batch','$admn','$roll','$uid','$name','$sex')");
 		if($SQL)
