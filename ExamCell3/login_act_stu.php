@@ -7,8 +7,8 @@ if(isset($_POST['Submit']))
 	echo "<br/><br/>";
 	echo $password = mysqli_real_escape_string($conn,$_POST['password']);
 	echo "<br/><br/>";
-	echo $password = md5($password); // MD5 Hash
-	$Auth_SQL = mysqli_query($conn,"SELECT * from student_user WHERE username = '$username' AND password = '$password'");
+	//echo $password = md5($password); // MD5 Hash
+	$Auth_SQL = mysqli_query($conn,"SELECT * from person WHERE un = '$username' AND ps = '$password'");
 	if(mysqli_num_rows($Auth_SQL) > 0)
 	{
 		while($User_Array = mysqli_fetch_array($Auth_SQL))
@@ -18,12 +18,12 @@ if(isset($_POST['Submit']))
 			$Auth['auth'] = 'true';
 			session_start();
 			$_SESSION['auth'] = $Auth;
-			header('Location: index_student.php');
+			header("Location: student_hp.php?id=$username");
 		}
 	}
 	else
 	{
-		header('Location: login_student.php?error=invalid');
+		header("Location: login_student.php?error=invalid");
 	}
 }
 ?>

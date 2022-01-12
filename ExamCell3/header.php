@@ -31,9 +31,9 @@ include_once('config.php');
           <nav class="main_menu">
             <ul>
               <li><a href="index.php">Home</a></li>
-              <li><a href="#">Arrangements</a></li>
+              <li><a href="add_student.php">Add Student</a></li>
               <li><a href="import_student.php">Student Data</a></li>
-              <li><a href="#">Modify</a></li>
+              <li><a href="Search.php">Add Mark</a></li>
               <?php
 			   if(isset($UserAuth))
 			    echo '<li class="danger"><a href="logout.php">Logout</a></li>';

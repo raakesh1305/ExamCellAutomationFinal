@@ -50,6 +50,7 @@
 <?php 
 include_once "db/DatabaseConnect.php";
 include_once "classes/student.php";
+
 if($_SERVER["REQUEST_METHOD"]=="POST"){
 
   $Student = new student();
