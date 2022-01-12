@@ -32,6 +32,7 @@ include_once('config.php');
             <ul>
               <li><a href="index.php">Home</a></li>
               <li><a href="add_student.php">Add Student</a></li>
+              <li><a href="index.php">Exam room</a></li>
               <li><a href="import_student.php">Student Data</a></li>
               <li><a href="Search.php">Add Mark</a></li>
               <?php
