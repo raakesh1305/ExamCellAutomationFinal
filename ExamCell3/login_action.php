@@ -18,7 +18,7 @@ if(isset($_POST['Submit']))
 			$Auth['auth'] = 'true';
 			session_start();
 			$_SESSION['auth'] = $Auth;
-			header('Location: index.php');
+			header('Location: index1.php');
 		}
 	}
 	else

@@ -30,7 +30,7 @@ include_once('config.php');
         <div class="col-xs-12 col-sm-6  col-md-8 col-lg-8">
           <nav class="main_menu">
             <ul>
-              <li><a href="index.php">Home</a></li>
+              <li><a href="index1.php">Home</a></li>
               <li><a href="add_student.php">Add Student</a></li>
               <li><a href="index.php">Exam room</a></li>
               <li><a href="import_student.php">Student Data</a></li>
