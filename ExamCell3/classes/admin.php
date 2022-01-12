@@ -8,7 +8,7 @@ class admin extends person{
     	$sql = "SELECT * FROM register";
 
 $result = $this->connect()->query($sql);
-$count=mysqli_num_rows($result);
+$count1=mysqli_num_rows($result);
 
 
 echo "<form style=margin-top:70px;><table border='1'>
@@ -46,7 +46,7 @@ $sql = "SELECT * FROM register" or die("Could not connect database " .mysqli_err
 
 
 $result = $this->connect()->query($sql);
-$count=mysqli_num_rows($result);
+$count2=mysqli_num_rows($result);
 
 
 echo "<table border='1'>
@@ -88,7 +88,7 @@ echo "</table>";
 function addstudent(){
   $sql = "SELECT * FROM register";
 $result = $this->connect()->query($sql);
-$count=mysqli_num_rows($result);
+$count3=mysqli_num_rows($result);//count3 =2
 
 while($row = mysqli_fetch_array($result))
 {
@@ -98,15 +98,22 @@ $LastName=$row['LastName'];
 $id=$row['id']; 
 $level=$row['Level'];
 $Semester=$row['Semester'];
-$sql = "UPDATE register SET  pass='2018' WHERE pass='Not-added'  " ;
-$result2 = $this->connect()->query($sql);
-$count=mysqli_num_rows($result2);
-$sql2="INSERT INTO person (un,ps,jop)
-VALUES ('$un','2018', 'st')";
+
+//$sqlnew = "SELECT * from register WHERE pass='Not-added'  " ;
+
+if($row['pass']=="Not-added")
+{
+  $sql = "UPDATE register SET  pass='password' WHERE pass='Not-added'  " ;//password change
+  $result2 = $this->connect()->query($sql);
+  //$count4=mysqli_num_rows($result2);//count4 =1
+
+$sql2="INSERT INTO person (un,ps,jop) VALUES ('$un','password', 'st')";
 $result2 = $this->connect()->query($sql2);
+
 $sql3="INSERT INTO hallticket (FirstName,LastName,id,Level,Semester)
 VALUES ('$FirstName','$LastName', '$id','$level','$Semester')";
 $result3 = $this->connect()->query($sql3);
+
 if ($row['Semester']==1) {
    $sql4="INSERT INTO marksheet (stuId,Semester,sub1,sub2,sub3,sub4,sub5,sub6,sub7)
 VALUES ('$id','$Semester','English1','Math1','Physics','CS','Is','Elctronics','Th')";
@@ -139,6 +146,8 @@ $result4 = $this->connect()->query($sql4);
 }
 
 }
+
+}
 header('location: ../add_student.php');
 
 }
@@ -146,9 +155,9 @@ header('location: ../add_student.php');
 function Search($id,$sem){
 $sqltext = "SELECT * FROM marksheet WHERE stuId = '$id' AND Semester='$sem' ";
   $result = $this->connect()->query($sqltext);
-  $count=mysqli_num_rows($result);
+  $count5=mysqli_num_rows($result);
 
-if($count==1){
+if($count5==1){
                 header("location:MarksheetFill.php?id=$id");
             }
             else{
@@ -249,5 +258,6 @@ if ($conn == TRUE) {
 
 
 }
+
 
 

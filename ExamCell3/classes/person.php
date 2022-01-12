@@ -1,5 +1,6 @@
 <?php
 include_once ('./db/DatabaseConnect.php');
+
  class person extends db {
  public $username;
  public $password;
