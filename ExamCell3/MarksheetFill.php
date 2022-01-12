@@ -10,7 +10,7 @@
   <div class="logo"><h1>EXAM CELL AUTOMATION</h1></div>
   <div class="option">
     <ul>
-      <li><a href="admin_hp.php">HOME</a></li>
+      <li><a href="index.php">HOME</a></li>
       <li><a href="#about">ABOUT</a></li>
       <li><a>CONTACT US</a></li>
       <li><a href="logout.php">LOG OUT</a></li>

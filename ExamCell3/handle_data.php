@@ -17,7 +17,7 @@ $no_exam_days = $no_class_rooms = $no_classes = 0;
  if (!is_numeric($no_exam_days) || !is_numeric($no_classes) || !is_numeric($no_class_rooms) || $no_exam_days <= 0 || $no_classes <=0 || $no_class_rooms <=0 || $no_exam_days > 5)
  {
    echo "Check!!";
-   header ('Location: ./?error=invalid');
+  // header ('Location: ./?error=invalid');
  } 
  
  else
