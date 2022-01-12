@@ -14,8 +14,12 @@ $no_exam_days = $no_class_rooms = $no_classes = 0;
   $no_class_rooms = $_POST['no_class_rooms'];
 
  //Handling Errors if its not a valid input
- if (!is_numeric($no_exam_days) || !is_numeric($no_classes) || !is_numeric($no_exam_days) || $no_exam_days <= 0 || $no_classes <=0 || $no_class_rooms <=0 || $no_exam_days > 5)
-  header ('Location: ./?error=invalid');
+ if (!is_numeric($no_exam_days) || !is_numeric($no_classes) || !is_numeric($no_class_rooms) || $no_exam_days <= 0 || $no_classes <=0 || $no_class_rooms <=0 || $no_exam_days > 5)
+ {
+   echo "Check!!";
+   header ('Location: ./?error=invalid');
+ } 
+ 
  else
  {
 	 $no_of_exam_days_counter = 1;
